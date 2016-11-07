@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Dictionary/sentiment dictionary source/正面情感词语（中文）.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Dictionary/sentiment dictionary source/负面情感词语（中文）.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Dictionary/sentiment dictionary/positive and negative dictionary/Negdict.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Dictionary/sentiment dictionary/positive and negative dictionary/Posdict.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Dictionary/stopword/stopWordjava.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/wordcut/error_word.txt" charset="GBK" />
+  </component>
+</project>
