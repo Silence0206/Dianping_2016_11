@@ -10,8 +10,8 @@ import jieba.posseg #需要另外加载一个词性标注模块
 """
 构造自己的情感词典初步--统计词频
 """
-jieba.load_userdict("G:\Dianping\Dictionary\segmentation dictionary\segdict1.txt")
-jieba.load_userdict("G:\Dianping\Dictionary\segmentation dictionary\segdict2.txt")
+# jieba.load_userdict("G:\Dianping\Dictionary\segmentation dictionary\segdict1.txt")
+jieba.load_userdict("E:\999Git\Dianping_2016_11\Dictionary\segmentation dictionary\segdict2.txt")
 
 """用来存储词频统计结果"""
 result = {}
@@ -179,4 +179,5 @@ def main3():
                     "%Y-%m-%d %H:%M:%S") + item[0][0]+item[0][1]+str(item[1]) + "\n")
     conn2.close()
 
-
+a=wordfrequency_tag("NLTK是Python很强大的第三方库，可以很方便的完成很多自然语言处理（NLP）的任务，包括分词、词性标注、命名实体识别（NER）及句法分析")
+print(a)

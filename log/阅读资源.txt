@@ -13,7 +13,8 @@ http://blog.csdn.net/java_2005
 http://bbs.w3china.org/index.asp
 http://blogger.org.cn/blog/more.asp?name=Lee&id=11851
 
-如果你知道要做什么，写论文收集资料时应参考：(1)该领域牛人的主页；(2)著名实验室的技术报告；(3)；顶级期刊或者会议近期发表的论文；(4)DBLP、CiteSeer、CCSB和CEUR Proceedings(SW方向的推荐看看)。四者应该是相互关联的，比较容易查找。
+如果你知道要做什么，写论文收集资料时应参考：(1)该领域牛人的主页；(2)著名实验室的技术报告；(3)；顶级期刊或者会议近期发表的论文；
+(4)DBLP、CiteSeer、CCSB和CEUR Proceedings(SW方向的推荐看看)。四者应该是相互关联的，比较容易查找。
 如果你不知道干什么，首先读国内三大学报的一些综述性论文，找出一些你感兴趣的中文引文读读。然后查找这些中文引文参考的e文论文，主要看related work和future work部分，总结出别人做过但还有不足的工作和领域的前沿工作。关键是要与导师的项目和课题结合起来，这样出文容易、毕业也容易。国内学生做研究基于实际问题的少，从论文来到论文去的空谈多。
 
 加拿大Concordia University语义网课程主页：
