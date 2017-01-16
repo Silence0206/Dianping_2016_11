@@ -26,7 +26,9 @@ for com in comments:
 commentList = tp.seg_fil_rew(comments)
 def tarin1(texts):
     dictionary = corpora.Dictionary(texts)
+    dictionary.save(os.getcwd()+'/tmp/deerwester.dict')  # store the dictionary, for future reference
     corpus = [dictionary.doc2bow(text) for text in texts]
+    corpora.MmCorpus.serialize(os.getcwd()+'/tmp/deerwester.mm', corpus)#将corpus持久化到磁盘中
     tfidf = models.TfidfModel(corpus)
     corpus_tfidf = tfidf[corpus]
     lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=10)

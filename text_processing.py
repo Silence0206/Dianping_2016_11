@@ -10,16 +10,9 @@ import time
 import logging
 import  codecs
 
-<<<<<<< HEAD
-# jieba.load_userdict("G:\Dianping\Dictionary\segmentation dictionary\segdict1.txt")
-# jieba.load_userdict("G:\Dianping\Dictionary\segmentation dictionary\segdict2.txt")
-=======
-# nowdir = os.getcwd()+"\Dictionary\segmentation dictionary\segdict1.txt"
-# jieba.load_userdict(os.getcwd()+"\Dictionary\segmentation dictionary\segdict2.txt")
 
-jieba.load_userdict("G:\Dianping2017\Dianping_2016_11\Dictionary\segmentation dictionary\segdict2.txt")
-# jieba.load_userdict("G:\Dianping2017\Dianping_2016_11\Dictionary\segmentation dictionary\segdict1.txt")
->>>>>>> origin/master
+jieba.load_userdict(os.getcwd()+"\Dictionary\segmentation dictionary\segdict2.txt")
+
 """
 弄出来标点还在
 """
@@ -161,13 +154,12 @@ def set_flag(wordname,wordtag):
         print("标记词条出问题", e)
         conn.rollback
 
-<<<<<<< HEAD
 def lexical_diversity(text):
     return len(text)/len(set(text))
 
 def percentage(count, total):
     return 100 * count / total
-=======
+
 def read_list_for_BusArea(usr, pwd, db,busareaId):
     try:
         conn1 = mysql.connector.connect(user=usr, password=pwd, database=db)
@@ -215,7 +207,6 @@ def seg_fil_rew(reviews,low_freq_filter = False):
 
     # Return filtered segment reviews
     return seg_fil_result
->>>>>>> origin/master
 
 def main1():
     words= '这家店经过好几次，一贯的印象是生意不错再加上店内外环境超赞，过年终于找到空进去尝试了一次，体验很不错。走进店内，给人的感觉是明亮，通透，宽敞，很有设计感。敞开式厨房非常大，非常干净整洁，能让食客看到自己食物制作的整个过程。服务生和厨师都是既有老外也有中国人。餐前面包好吃，第一口下去感觉好硬，用力掰下一口，沾着他们的给酱，能感觉到一股微微的香味在口中漫开。前菜之神户牛肉，牛肉好没得说，配上羊奶酪，和芝麻菜，点上柠檬汁，复合口味，很开胃。前菜之主厨精选三样，摆盘精致，还用黑醋汁裱上了calypso。味道上，就感觉西班牙火腿确实蛮好吃的。主菜之烤羊排。要求五分熟，羊排不大但肥厚，一面略焦。口感有肥嫩有焦香还有一股温和的羊肉味。配的烤虾是个惊喜，腌得入味，煎得很透。主菜之慢火炖牛脸肉。这道比较一般，牛脸肉确实炖的很酥软了但是口味上只吃的出略过头的咸味，中间那坨土豆泥倒是味道很不错，不油且醇香。甜点是巧克力熔岩。这个甜品一直有听说，第一次尝试，感觉这家店没辜负我对它的想象，醇香绵软入口即化，微甜，配上一杯意式咖啡作为一餐的收尾感觉很美好。老婆还点了个不知道什么玩意的无酒精鸡尾酒，出乎意料的好喝。我不太吃西餐，之前试过外滩的米氏和芮欧的Henkes。我觉得我更喜欢这家Calypso，因为它家菜的味道并没让我这个爱国的胃觉得不适应倒是又能确实体验到异国美食的小新奇。以后还会光顾！.'
@@ -224,12 +215,8 @@ def main1():
     for item in sentences:
         print(segmentation(item,"list"))
 
-<<<<<<< HEAD
-main1()
-=======
 # rews = ["这家店经过好几次，一贯的印象是生意不错再加上店内外环境超赞，过年终于找到空进去尝试了一次，体验很不错。走进店内，给人的感觉是明亮，通透，宽敞，很有设计感。敞开式厨房非常大，非常干净整洁，能让食客看到自己食物制作的整个过程。",
 #         "地道的本帮菜，挺有特点。价格要比其他上海人家要贵一些，刚才一查才知道他名字后面加“精作坊”。环境不错，菜的口味还是很适应不同的人群，菜的质量可以，有不少包房，很适应一般商务用餐。",
 #         "冲着面包蛤蜊汤去的～幸好是没到饭点就去抢位子，要不然十一点半以后根本没有座位啊～蔬菜沙拉加一份烟熏三文鱼是绝配～面包蛤蜊汤味道和旧金山的渔人码头比稍微有一点点淡～海鲜面么无功无过～就是一股西餐的味道啦～～～"]
 # result = seg_fil_rew(rews)
 # print(result)
->>>>>>> origin/master
