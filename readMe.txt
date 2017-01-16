@@ -13,9 +13,12 @@ Create_My_Dic：
 
 wordcut/wordfrequency.py：
     打标签、分句分词、统计词频
-    用余生成数据库中的word_frequency
+    用于生成数据库中的word_frequency，其中的单词都是词频大于某个阈值的
 
 ===数据库表
 1、comments_split
 2、word_frequency
     name| word_tag |word_times| flag
+
+
+考虑标点？

@@ -1,6 +1,6 @@
 # *- coding: utf-8 -*-
 import jieba
-import  wordcloud
+# import  wordcloud
 import re
 import string
 import  xlwt
@@ -37,7 +37,8 @@ def postagger(sentence):
 加词性标签
 """
 def wordfrequency_tag(text):
-    sub_re='[a-zA-Z]+|[\s+\.\!\/_,$%^*\(\d+\"\']+|[+—；—！:\(\)：《》，。？、~@#￥%……&*（）％～\[\]\|\?\·【】“”;-]+'
+    #不应该把英文过滤、此处去了标点
+    sub_re='[\s+\.\!\/_,$%^*\(\d+\"\']+|[+—；—！:\(\)：《》，。？、~@#￥%……&*（）％～\[\]\|\?\·【】“”;-]+'
     text=re.sub(sub_re,' ',text)
     textlist=text.split()
     print("=======")
