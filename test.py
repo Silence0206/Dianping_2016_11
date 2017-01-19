@@ -2,6 +2,7 @@
 # -*- coding=gbk -*-
 from gensim import corpora, models, similarities
 from nltk.collocations import BigramAssocMeasures, BigramCollocationFinder
+import jieba
 
 
 """

@@ -5,6 +5,8 @@ import os
 import re
 import jieba
 import jieba.posseg #需要另外加载一个词性标注模块
+import jieba.analyse
+
 import snownlp
 import time
 import logging
@@ -215,6 +217,24 @@ def main1():
     for item in sentences:
         print(segmentation(item,"list"))
 
+def test():
+    print('=' * 40)
+    print('3. 关键词提取')
+    print('-' * 40)
+    print(' TF-IDF')
+    print('-' * 40)
+
+    s = "此外，公司拟对全资子公司吉林欧亚置业有限公司增资4.3亿元，增资后，吉林欧亚置业注册资本由7000万元增加到5亿元。吉林欧亚置业主要经营范围为房地产开发及百货零售等业务。目前在建吉林欧亚城市商业综合体项目。2013年，实现营业收入0万元，实现净利润-139.13万元。"
+    for x, w in jieba.analyse.extract_tags(s, withWeight=True):
+        print('%s %s' % (x, w))
+
+    print('-' * 40)
+    print(' TextRank')
+    print('-' * 40)
+
+    for x, w in jieba.analyse.textrank(s, withWeight=True):
+        print('%s %s' % (x, w))
+test()
 # rews = ["这家店经过好几次，一贯的印象是生意不错再加上店内外环境超赞，过年终于找到空进去尝试了一次，体验很不错。走进店内，给人的感觉是明亮，通透，宽敞，很有设计感。敞开式厨房非常大，非常干净整洁，能让食客看到自己食物制作的整个过程。",
 #         "地道的本帮菜，挺有特点。价格要比其他上海人家要贵一些，刚才一查才知道他名字后面加“精作坊”。环境不错，菜的口味还是很适应不同的人群，菜的质量可以，有不少包房，很适应一般商务用餐。",
 #         "冲着面包蛤蜊汤去的～幸好是没到饭点就去抢位子，要不然十一点半以后根本没有座位啊～蔬菜沙拉加一份烟熏三文鱼是绝配～面包蛤蜊汤味道和旧金山的渔人码头比稍微有一点点淡～海鲜面么无功无过～就是一股西餐的味道啦～～～"]

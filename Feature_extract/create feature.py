@@ -5,7 +5,9 @@ from nltk.collocations import BigramAssocMeasures, BigramCollocationFinder
 import  text_processing as tp
 import os
 
-
+"""
+该文档涉及计算tf-idf
+"""
 
 # rews = ["这家店经过好几次，一贯的印象是生意不错再加上非常大，非常干净整洁，能让食客看到自己食物制作的整个过程。",
 #         "地道的本帮菜，挺有特点。价格刚才一查才知道他名字后面加“精作坊”。环境不错，菜的口味还是很适应不同的人群，菜的质量可以，有不少包房，很适应一般商务用餐。",
