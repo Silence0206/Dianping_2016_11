@@ -73,13 +73,27 @@ def readCSV(filename):
         for row in reader:
             print(row)
 
-#获取txt中的商品id
+#获取手写txt中的商品id
 def getTextId(file_name):
     ids=[]
     with open (file_name, 'r') as f:#'fail_open_resURL.txt'
         for line in f.readlines():
             ids.append(line.split(",")[0])
     return ids
+
+"""
+获取羽绒服.csv中的商品然后爬
+返回（店铺id，商品id）
+"""
+def getItemsFromCsv(file_name):
+    with codecs.open(file_name+".csv", 'r', 'utf-8') as f:
+        tuples = []
+        for line in f.readlines():
+            infos = line.split(",")
+            idtuple = (infos[0],infos[2])
+            tuples.append(idtuple)
+        print((tuples))
+    return tuples
 
 # def getStoreLink(url):
 #     res = requests.get(url)
@@ -111,16 +125,16 @@ def createStoresLink(sellerId,idPath):
         stores.append(currURL)
     print(stores)
 
+def main2():
+    getItemsFromCsv("data\羽绒服")
+
 
 if __name__ == "__main__":
-    itemIds = getTextId("only\only_lianyiqun.txt")
-    sellerIds = ["356060330"]*len(itemIds)
-    terms = list(zip(sellerIds,itemIds))
-    for term in terms:
-        # print(term[0],term[1])
-        spiderOneStore(term[0],term[1])
-
-    # print(map(spiderOneStore,sellerIds,itemIds))
-
-    # getPageNum("https://rate.tmall.com/list_detail_rate.htm?itemId=526203843523&sellerId=356060330&order=3&append=0&content=0&currentPage=1")
+    # itemIds = getTextId("only\only_lianyiqun.txt")
+    # sellerIds = ["356060330"]*len(itemIds)
+    # terms = list(zip(sellerIds,itemIds))
+    # for term in terms:
+    #     # print(term[0],term[1])
+    #     spiderOneStore(term[0],term[1])
+    main2()
 
