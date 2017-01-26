@@ -17,7 +17,7 @@ url = "https://only.m.tmall.com/shop/shop_auction_search.do?spm=a320p.7692363.0.
 url = "https://semir.m.tmall.com/shop/shop_auction_search.do?spm=a320p.7692171.0.0&sort=d&shop_cn=%E5%A5%B3%E8%A3%85%E7%BE%BD%E7%BB%92%E6%9C%8D&ascid=1255576091&scid=1255576091&p=1&page_size=12&from=h5&shop_id=61127277&ajson=1&_tm_source=tmallsearch"
 url = "https://bosideng.m.tmall.com/shop/shop_auction_search.do?spm=a320p.7692363.0.0&sort=d&shop_cn=2016%E5%A5%B3%E6%AC%BE&ascid=1201039383&scid=1201039383&p=1&page_size=12&from=h5&shop_id=57301762&ajson=1&_tm_source=tmallsearch"
 """
-urls = [
+url_yrf = [
     "https://bosideng.m.tmall.com/shop/shop_auction_search.do?spm=a320p.7692363.0.0&sort=d&shop_cn=2016%E5%A5%B3%E6%AC%BE&ascid=1201039383&scid=1201039383&p=1&page_size=12&from=h5&shop_id=57301762&ajson=1&_tm_source=tmallsearch",
     "https://semir.m.tmall.com/shop/shop_auction_search.do?spm=a320p.7692171.0.0&sort=d&shop_cn=%E5%A5%B3%E8%A3%85%E7%BE%BD%E7%BB%92%E6%9C%8D&ascid=1255576091&scid=1255576091&p=1&page_size=12&from=h5&shop_id=61127277&ajson=1&_tm_source=tmallsearch",
     "https://only.m.tmall.com/shop/shop_auction_search.do?spm=a320p.7692363.0.0&sort=d&shop_cn=%E5%85%A8%E9%83%A8%E7%BE%BD%E7%BB%92%E6%9C%8D&ascid=1265455843&scid=1265455843&p=1&page_size=12&from=h5&shop_id=60129786&ajson=1&_tm_source=tmallsearch"
@@ -67,7 +67,7 @@ def getItem(url,num):
 
 
 if __name__ == '__main__':
-    for url in urls:
+    for url in url_yrf:
         print(url)
         getItem(url,10)
         time.sleep(5)

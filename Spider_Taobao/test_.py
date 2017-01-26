@@ -35,15 +35,16 @@ def getOnePage(url,sellerid,itemid):
             tamllSweetLevel = item["tamllSweetLevel"]
             sellerId = item["sellerId"]
             picNum = len(item["pics"])
-            infoList = [sellerId, auctionSku, displayUserNick, id, rateContent, rateDate, tamllSweetLevel, picNum]
-            with codecs.open("onlydata\\"+sellerid + "_" + itemid + '_filter.csv', 'a+', 'utf-8') as f:
+            infoList = [itemid,sellerId, auctionSku, displayUserNick, id, rateContent, rateDate, tamllSweetLevel, picNum]
+            # with codecs.open("onlydata\\"+sellerid + "_" + itemid + '_filter.csv', 'a+', 'utf-8') as f:
+            with codecs.open("data\羽绒服评论.csv", 'a+', 'utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(infoList)
             print(infoList)
     except BaseException as e:
         print(e)
         print("问题地址"+url)
-        with open('log\FailLinks.txt', 'a') as f:
+        with codecs.open('log\FailLinks.txt', 'a+', 'utf-8') as f:
             f.writelines(sellerid+","+ itemid+","+url+"\n")
     time.sleep(10)
 
@@ -92,22 +93,8 @@ def getItemsFromCsv(file_name):
             infos = line.split(",")
             idtuple = (infos[0],infos[2])
             tuples.append(idtuple)
-        print((tuples))
     return tuples
 
-# def getStoreLink(url):
-#     res = requests.get(url)
-#     soup = BeautifulSoup(res.text, 'lxml')
-#     print(soup)
-    # all_line = soup.find(class_="J_TItems")
-    # print(all_line)
-    # all_line = soup.find(class_="J_TItems").find_all(class_="item4line1",limit=4)
-    # for item4line1 in all_line:
-    #     items = item4line1.select(".item")
-    #     for item in items:
-    #         id = item["data-id"]
-    #         href = item.select(".detail > .item-name")[0]["href"]
-    #         print(id,href)
 
 
 #https://rate.tmall.com/list_detail_rate.htm?itemId=539330410500&sellerId=356060330&order=3&append=0&content=0&currentPage=10
@@ -126,7 +113,11 @@ def createStoresLink(sellerId,idPath):
     print(stores)
 
 def main2():
-    getItemsFromCsv("data\羽绒服")
+    tuples = getItemsFromCsv("data\羽绒服")
+    print("=========获取待爬取商品列表=========")
+    print(tuples)
+    for item in tuples:
+        spiderOneStore(item[0], item[1])
 
 
 if __name__ == "__main__":
@@ -137,4 +128,5 @@ if __name__ == "__main__":
     #     # print(term[0],term[1])
     #     spiderOneStore(term[0],term[1])
     main2()
+    # readCSV("data\羽绒服评论")
 
