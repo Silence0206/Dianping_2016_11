@@ -17,7 +17,7 @@ headers = {
 #地址格式都是url这样
 url = "https://rate.tmall.com/list_detail_rate.htm?itemId=537841713070&sellerId=356060330&order=3&append=0&content=1&currentPage=1"
 
-def getOnePage(url,sellerid,itemid):
+def getOnePage(url,sellerid,itemid,filename):
     try:
         res = requests.get(url)
         res_text = re.sub('\'', '\"', res.text)
@@ -37,7 +37,7 @@ def getOnePage(url,sellerid,itemid):
             picNum = len(item["pics"])
             infoList = [itemid,sellerId, auctionSku, displayUserNick, id, rateContent, rateDate, tamllSweetLevel, picNum]
             # with codecs.open("onlydata\\"+sellerid + "_" + itemid + '_filter.csv', 'a+', 'utf-8') as f:
-            with codecs.open("data\羽绒服评论.csv", 'a+', 'utf-8') as f:
+            with codecs.open("data\\"+filename+".csv", 'a+', 'utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(infoList)
             print(infoList)
@@ -46,7 +46,7 @@ def getOnePage(url,sellerid,itemid):
         print("问题地址"+url)
         with codecs.open('log\FailLinks.txt', 'a+', 'utf-8') as f:
             f.writelines(sellerid+","+ itemid+","+url+"\n")
-    time.sleep(10)
+    time.sleep(7)
 
 """
 传进来的url的content要等于1！！！
@@ -95,12 +95,16 @@ def getItemsFromCsv(file_name):
             tuples.append(idtuple)
     return tuples
 
+def getFailCom(filename):
+    with codecs.open(filename+".txt", 'r', 'utf-8') as f:
+        infos = []
+        for line in f.readlines():
+            keys = line.split(",")
+            infos.append((keys[0],keys[1],keys[2].strip()))
+        print(infos)
+        return infos
 
 
-#https://rate.tmall.com/list_detail_rate.htm?itemId=539330410500&sellerId=356060330&order=3&append=0&content=0&currentPage=10
-#https://rate.tmall.com/list_detail_rate.htm?itemId=521269150100&sellerId=653206261&order=3&append=0&content=0&currentPage=3
-def main1():
-    spiderOneStore("https://rate.tmall.com/list_detail_rate.htm?itemId=539968109660&sellerId=356060330&order=3&append=0&content=0&currentPage=1","356060330","539968109660")
 
 #只对only sellerid写死
 def createStoresLink(sellerId,idPath):
@@ -113,7 +117,7 @@ def createStoresLink(sellerId,idPath):
     print(stores)
 
 def main2():
-    tuples = getItemsFromCsv("data\羽绒服")
+    tuples = getItemsFromCsv("data\大衣")
     print("=========获取待爬取商品列表=========")
     print(tuples)
     for item in tuples:
@@ -121,12 +125,7 @@ def main2():
 
 
 if __name__ == "__main__":
-    # itemIds = getTextId("only\only_lianyiqun.txt")
-    # sellerIds = ["356060330"]*len(itemIds)
-    # terms = list(zip(sellerIds,itemIds))
-    # for term in terms:
-    #     # print(term[0],term[1])
-    #     spiderOneStore(term[0],term[1])
-    main2()
-    # readCSV("data\羽绒服评论")
+    infos = getFailCom("G:\Dianping2017\Dianping_2016_11\Spider_Taobao\log\FailLinks")
+    for info in infos:
+        getOnePage(info[2],info[0],info[1],"羽绒服评论")
 

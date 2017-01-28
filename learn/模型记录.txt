@@ -1,0 +1,41 @@
+F:\Users\Silence\Anaconda3\python.exe G:/Dianping2017/Dianping_2016_11/learn/word2vec.py
+F:\Users\Silence\Anaconda3\lib\site-packages\gensim\utils.py:855: UserWarning: detected Windows; aliasing chunkize to chunkize_serial
+  warnings.warn("detected Windows; aliasing chunkize to chunkize_serial")
+Building prefix dict from the default dictionary ...
+Loading model from cache C:\Users\Silence\AppData\Local\Temp\jieba.cache
+Loading model cost 3.302 seconds.
+Prefix dict has been built succesfully.
+2017-01-27 16:34:29,184:INFO: collecting all words and their counts
+2017-01-27 16:34:29,189:INFO: PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2017-01-27 16:34:29,937:INFO: collected 17306 word types from a corpus of 793046 raw words and 80 sentences
+2017-01-27 16:34:29,937:INFO: Loading a fresh vocabulary
+2017-01-27 16:34:29,983:INFO: min_count=6 retains 4454 unique words (25% of original 17306, drops 12852)
+2017-01-27 16:34:29,983:INFO: min_count=6 leaves 770195 word corpus (97% of original 793046, drops 22851)
+2017-01-27 16:34:30,038:INFO: deleting the raw counts dictionary of 17306 items
+2017-01-27 16:34:30,041:INFO: sample=0.001 downsamples 50 most-common words
+2017-01-27 16:34:30,042:INFO: downsampling leaves estimated 499915 word corpus (64.9% of prior 770195)
+2017-01-27 16:34:30,042:INFO: estimated required memory for 4454 words and 200 dimensions: 9353400 bytes
+2017-01-27 16:34:30,088:INFO: resetting layer weights
+2017-01-27 16:34:30,330:INFO: training model with 3 workers on 4454 vocabulary and 200 features, using sg=0 hs=0 sample=0.001 negative=5 window=5
+2017-01-27 16:34:30,331:INFO: expecting 80 sentences, matching count from corpus used for vocabulary survey
+2017-01-27 16:34:31,386:INFO: PROGRESS: at 9.50% examples, 229023 words/s, in_qsize 6, out_qsize 0
+2017-01-27 16:34:32,421:INFO: PROGRESS: at 18.50% examples, 223773 words/s, in_qsize 5, out_qsize 0
+2017-01-27 16:34:33,430:INFO: PROGRESS: at 27.00% examples, 219058 words/s, in_qsize 6, out_qsize 0
+2017-01-27 16:34:34,436:INFO: PROGRESS: at 35.00% examples, 214114 words/s, in_qsize 5, out_qsize 0
+2017-01-27 16:34:35,447:INFO: PROGRESS: at 43.50% examples, 212946 words/s, in_qsize 5, out_qsize 0
+2017-01-27 16:34:36,457:INFO: PROGRESS: at 52.00% examples, 212944 words/s, in_qsize 6, out_qsize 0
+2017-01-27 16:34:37,460:INFO: PROGRESS: at 61.00% examples, 214134 words/s, in_qsize 5, out_qsize 1
+2017-01-27 16:34:38,487:INFO: PROGRESS: at 70.50% examples, 216622 words/s, in_qsize 6, out_qsize 0
+2017-01-27 16:34:39,528:INFO: PROGRESS: at 80.50% examples, 219013 words/s, in_qsize 6, out_qsize 0
+2017-01-27 16:34:40,543:INFO: PROGRESS: at 90.00% examples, 220787 words/s, in_qsize 5, out_qsize 0
+2017-01-27 16:34:41,552:INFO: PROGRESS: at 98.25% examples, 219387 words/s, in_qsize 5, out_qsize 0
+2017-01-27 16:34:41,685:INFO: worker thread finished; awaiting finish of 2 more threads
+2017-01-27 16:34:41,713:INFO: worker thread finished; awaiting finish of 1 more threads
+2017-01-27 16:34:41,719:INFO: worker thread finished; awaiting finish of 0 more threads
+2017-01-27 16:34:41,719:INFO: training on 3965230 raw words (2500733 effective words) took 11.4s, 219672 effective words/s
+2017-01-27 16:34:41,719:INFO: saving Word2Vec object under G:\Dianping2017\Dianping_2016_11/learn/word2vec2.model, separately None
+2017-01-27 16:34:41,720:INFO: not storing attribute cum_table
+2017-01-27 16:34:41,720:INFO: not storing attribute syn0norm
+2017-01-27 16:34:41,982:INFO: saved G:\Dianping2017\Dianping_2016_11/learn/word2vec2.model
+
+Process finished with exit code 0

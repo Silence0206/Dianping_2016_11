@@ -12,7 +12,7 @@ import logging
 import  codecs
 
 
-jieba.load_userdict(os.getcwd()+"\Dictionary\segmentation dictionary\segdict2.txt")
+jieba.load_userdict(os.getcwd()+"\Cloth_Dictionarys\clothDic_frequency.txt")
 
 """
 弄出来标点还在
@@ -166,7 +166,7 @@ def read_list_for_BusArea(usr, pwd, db,busareaId):
         conn1 = mysql.connector.connect(user=usr, password=pwd, database=db)
         cursor = conn1.cursor()
         # cursor.execute('select * from user where id = %s', ('1',))
-        cursor.execute( 'SELECT * FROM dianping.comments A ,dianping.restaurants B   WHERE A.res_id=B.res_id and B.bussi_areaid = %s   order by comment_id limit 0,1000 ',(busareaId,))
+        cursor.execute( 'SELECT * FROM dianping.comments A ,dianping.restaurants B   WHERE A.res_id=B.res_id and B.bussi_areaid = %s   order by comment_id limit 0,100 ',(busareaId,))
         rows = cursor.fetchall()
         cursor.close()
         conn1.close()
@@ -233,10 +233,10 @@ def test():
 
     for x, w in jieba.analyse.textrank(s, withWeight=True):
         print('%s %s' % (x, w))
-test()
-# rews = ["这家店经过好几次，一贯的印象是生意不错再加上店内外环境超赞，过年终于找到空进去尝试了一次，体验很不错。走进店内，给人的感觉是明亮，通透，宽敞，很有设计感。敞开式厨房非常大，非常干净整洁，能让食客看到自己食物制作的整个过程。",
-#         "地道的本帮菜，挺有特点。价格要比其他上海人家要贵一些，刚才一查才知道他名字后面加“精作坊”。环境不错，菜的口味还是很适应不同的人群，菜的质量可以，有不少包房，很适应一般商务用餐。",
-#         "冲着面包蛤蜊汤去的～幸好是没到饭点就去抢位子，要不然十一点半以后根本没有座位啊～蔬菜沙拉加一份烟熏三文鱼是绝配～面包蛤蜊汤味道和旧金山的渔人码头比稍微有一点点淡～海鲜面么无功无过～就是一股西餐的味道啦～～～"]
-rews = ["衣衣质量还不错，就是颜色不太喜欢"]
-result = segmentation("衣衣质量还不错，就是颜色不太喜欢","list")
-print(result)
+# test()
+# # rews = ["这家店经过好几次，一贯的印象是生意不错再加上店内外环境超赞，过年终于找到空进去尝试了一次，体验很不错。走进店内，给人的感觉是明亮，通透，宽敞，很有设计感。敞开式厨房非常大，非常干净整洁，能让食客看到自己食物制作的整个过程。",
+# #         "地道的本帮菜，挺有特点。价格要比其他上海人家要贵一些，刚才一查才知道他名字后面加“精作坊”。环境不错，菜的口味还是很适应不同的人群，菜的质量可以，有不少包房，很适应一般商务用餐。",
+# #         "冲着面包蛤蜊汤去的～幸好是没到饭点就去抢位子，要不然十一点半以后根本没有座位啊～蔬菜沙拉加一份烟熏三文鱼是绝配～面包蛤蜊汤味道和旧金山的渔人码头比稍微有一点点淡～海鲜面么无功无过～就是一股西餐的味道啦～～～"]
+# rews = ["衣衣质量还不错，就是颜色不太喜欢"]
+# result = segmentation("衣衣质量还不错，就是颜色不太喜欢","list")
+# print(result)

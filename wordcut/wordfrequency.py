@@ -7,11 +7,12 @@ import  xlwt
 import mysql.connector
 import datetime
 import jieba.posseg #需要另外加载一个词性标注模块
+import os
 """
 构造自己的情感词典初步--统计词频
 """
 # jieba.load_userdict("G:\Dianping\Dictionary\segmentation dictionary\segdict1.txt")
-jieba.load_userdict("E:\999Git\Dianping_2016_11\Dictionary\segmentation dictionary\segdict2.txt")
+jieba.load_userdict(os.getcwd()+"\Cloth_Dictionarys\clothDic_frequency.txt")
 
 """用来存储词频统计结果"""
 result = {}
