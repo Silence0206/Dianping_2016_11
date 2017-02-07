@@ -22,10 +22,11 @@ for item in results:
 print("===========打印评论=========")
 count = 1
 for com in comments:
-    print(str(count)+"    "+com)
+    # print(str(count)+"    "+com)
     count+=1
 
 commentList = tp.seg_fil_rew(comments)
+print(commentList)
 def tarin1(texts):
     dictionary = corpora.Dictionary(texts)
     dictionary.save(os.getcwd()+'/tmp/deerwester.dict')  # store the dictionary, for future reference
@@ -33,6 +34,9 @@ def tarin1(texts):
     corpora.MmCorpus.serialize(os.getcwd()+'/tmp/deerwester.mm', corpus)#将corpus持久化到磁盘中
     tfidf = models.TfidfModel(corpus)
     corpus_tfidf = tfidf[corpus]
+    for i in corpus_tfidf:
+        print(i)
+    print("=============corpus_tfidf===========")
     lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=10)
     # lda = models.LdaModel(corpus_tfidf, id2word=dictionary, num_topics=2)
     print("=====打印LSI10个主题=====")

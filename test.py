@@ -112,10 +112,12 @@ def train_by_lsi(lib_texts):
               lib_texts]  # doc2bow(): 将collection words 转为词袋，用两元组(word_id, word_frequency)表示
     print(corpus)
     tfidf = models.TfidfModel(corpus)
-    print(tfidf)
+
     corpus_tfidf = tfidf[corpus] #基于这个TF-IDF模型，我们可以将上述用词频表示文档向量表示为一个用tf-idf值表示的文档向量 也就是原来的词频变成TF-IDF值
-    # for doc in corpus_tfidf: #http://www.cnblogs.com/hanacode/articles/4819328.html
-    #     print(doc)
+    print("Array")
+    # print(corpus_tfidf.toarray())
+    for doc in corpus_tfidf: #http://www.cnblogs.com/hanacode/articles/4819328.html
+        print(doc)
 
     # 拍脑袋的：训练topic数量为10的LSI模型
     lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=11)
@@ -125,6 +127,6 @@ def train_by_lsi(lib_texts):
 
     return (index, dictionary, lsi)
 
-# train_by_lsi(lib_texts)
+train_by_lsi(lib_texts)
 dic = corpora.Dictionary.load(path+'/tmp/deerwester.dict')
 print(dic)
