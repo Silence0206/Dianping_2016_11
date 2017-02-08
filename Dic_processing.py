@@ -6,7 +6,11 @@ import jieba
 import jieba.posseg #需要另外加载一个词性标注模块
 import time
 import logging
+import os
 import  codecs
+"""
+本文件用于处理大众点评的
+"""
 """
 用于构造用户词典（用来使分词更准确）
 对于合并多个搜狗词库存进的TXT消除重复行

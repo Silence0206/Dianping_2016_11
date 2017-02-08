@@ -97,6 +97,7 @@ corpus_simi_matrix = similarities.MatrixSimilarity(corpus_lsi)
 #要处理的对象登场
 target_courses = ['环境还行，但是感觉不是很好吃，排队的人太多了']
 target_text = tp.seg_fil_rew(target_courses)
+print(target_text)
 test_bow = dictionary.doc2bow(target_text[0])#转换成次数
 test_tfidf = tfidf_model[test_bow]
 test_lsi = lsi_model[test_tfidf]
