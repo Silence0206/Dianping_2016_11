@@ -95,6 +95,8 @@ if __name__ == '__main__':
     getMostSimilar("面料","word2vec_Fc_filter_sent.model",100)
     getMostSimilar("大小","word2vec_Fc_filter_sent.model",100)
     getMostSimilar("快递","word2vec_Fc_filter_sent.model",100)
+    getMostSimilar("服务","word2vec_Fc_filter_sent.model",100)
+
 
 
 
